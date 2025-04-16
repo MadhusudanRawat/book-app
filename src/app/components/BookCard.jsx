@@ -16,7 +16,7 @@ export default function BookCard({ book }) {
               className="w-full h-48 object-cover rounded-md mb-3"
             />
           )}
-          <h2 className="text-lg font-semibold text-gray-800">{book.title.slice(0,40)}...</h2>
+          <h2 className="text-lg font-semibold text-gray-800">{book.title.slice(0,40)}{book?.title?.length > 40 ? "..." : ""}</h2>
           <p className="text-sm text-gray-600">by {book.author}</p>
         </div>
       </Link>

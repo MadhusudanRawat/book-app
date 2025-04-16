@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import useBooks from "./hooks/useBook";
 import BookCard from "./components/BookCard";
 import AddBookModal from "./components/AddBookModal"; // Add this line
+import Link from "next/link";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -51,12 +52,13 @@ export default function Home() {
             Clear
           </button>
         ) : (
-          <button
+          <Link
             className="bg-green-600 text-white px-4 py-2 rounded cursor-pointer"
-            onClick={() => setShowModal(true)} // open modal
+            // onClick={() => setShowModal(true)} // open modal
+            href={"/add"}
           >
             Add
-          </button>
+          </Link>
         )}
       </div>
 
@@ -68,11 +70,11 @@ export default function Home() {
         ))}
       </div>
 
-      <AddBookModal
+      {/* <AddBookModal
         isOpen={showModal}
         onClose={() => setShowModal(false)}
         onBookAdded={setBooks}
-      />
+      /> */}
     </div>
   );
 }
