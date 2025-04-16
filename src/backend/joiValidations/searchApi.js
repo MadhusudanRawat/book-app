@@ -8,7 +8,7 @@ export const searchSchema = Joi.object({
   });
 
 export const bookSchema = Joi.object({
-  title: Joi.string()
+  title: Joi.string().trim()
     .min(2)
     .required()
     .messages({
@@ -18,7 +18,7 @@ export const bookSchema = Joi.object({
       'any.required': 'Title is required.'
     }),
 
-  author: Joi.string()
+  author: Joi.string().trim()
     .min(2)
     .required()
     .messages({
